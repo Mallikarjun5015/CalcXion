@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { evaluate } from "mathjs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -24,14 +25,15 @@ export const Calci = () => {
     };
 
     const calculate = () => {
-    playSound();
-    try {
-        const res = Function('"use strict"; return (' + expression + ')')();
-        setResult(res);
-    } catch {
-        setResult("Error");
-    }
-};
+        playSound();
+        try {
+            const res = evaluate(expression);
+            setResult(res);
+        } catch {
+            setResult("Error");
+        }
+    };
+
 
 
     const clear = () => {
@@ -51,7 +53,7 @@ export const Calci = () => {
                     <div className="logo">M</div>
                     <h4 className="ms-2 mb-0">React Calculator</h4>
                 </div>
-                
+
                 <div className="screen-section p-3 mb-3">
                     <div className="expression text-end">
                         {expression || "0"}
