@@ -24,14 +24,15 @@ export const Calci = () => {
     };
 
     const calculate = () => {
-        playSound();
-        try {
-            const res = eval(expression);
-            setResult(res);
-        } catch {
-            setResult("Error");
-        }
-    };
+    playSound();
+    try {
+        const res = Function('"use strict"; return (' + expression + ')')();
+        setResult(res);
+    } catch {
+        setResult("Error");
+    }
+};
+
 
     const clear = () => {
         playSound();
