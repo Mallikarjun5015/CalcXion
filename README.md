@@ -46,7 +46,7 @@ This project emphasizes:
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/calcxion.git
+git clone https://github.com/Mallikarjun5015/CalcXion
 cd calcxion
 npm install
 npm start
