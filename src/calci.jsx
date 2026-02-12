@@ -47,7 +47,7 @@ export const Calci = () => {
         <div className="app-wrapper">
             <audio ref={audioRef} src={beepSound} preload="auto" />
 
-            <div className="container calculator mt-2 p-3">
+            <div className="container calculator mt-5 p-3 mb-1 px-4">
 
                 <div className="header d-flex align-items-center justify-content-center mb-3">
                     <div className="logo">M</div>
@@ -114,7 +114,7 @@ export const Calci = () => {
 
                 </div>
 
-                <div className="row text-center">
+                <div className="row text-center" >
 
                     <div className="col-3 p-1">
                         <button className="btn-custom" onClick={() => handleClick("0")} onTouchStart={playSound}>0</button>
@@ -129,7 +129,12 @@ export const Calci = () => {
                         <button className="btn-custom clear" onClick={clear} onTouchStart={playSound}>C</button>
                     </div>
 
+                    <br /><br /> 
                 </div>
+
+                <div className="row text-center p-1 m-2" ></div>
+
+            
 
             </div>
 
